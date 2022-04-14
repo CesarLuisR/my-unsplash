@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "paths": {
-      "@components/*": ["./components/*"],
-      "@config/*": ["./config/*"],
-      "@contexts/*": ["./contexts/*"],
-      "@hooks/*": ["./hooks/*"],
-      "@modules/*": ["./modules/*"],
-      "@pages/*": ["./pages/*"],
-      "@public/*": ["./public/*"],
-      "@services/*": ["./services/*"],
-      "@styles/*": ["./styles/*"],
-      "@globalTypes/*": ["./types/*"]
+      "@components/*": ["components/*"],
+      "@config/*": ["config/*"],
+      "@contexts/*": ["contexts/*"],
+      "@hooks/*": ["hooks/*"],
+      "@modules/*": ["modules/*"],
+      "@pages/*": ["pages/*"],
+      "@public/*": ["public/*"],
+      "@services/*": ["services/*"],
+      "@styles/*": ["styles/*"],
+      "@globalTypes/*": ["types/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
