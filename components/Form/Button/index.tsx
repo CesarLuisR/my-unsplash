@@ -1,12 +1,19 @@
-import { StyledButton } from "./styled";
+import {
+  StyledButton,
+  StyledSmallButton,
+  StyledTransparentButton,
+} from "./styled";
 
-const Button = ({ value, color }: ButtonProps) => {
-  return <StyledButton color={color}>{value}</StyledButton>;
+export const Button = (props: any) => {
+  return <StyledButton {...props}>{props.value}</StyledButton>;
 };
 
-type ButtonProps = {
-  value: string;
-  color: string;
+export const SmallButton = (props: any) => {
+  return <StyledSmallButton {...props}>{props.value}</StyledSmallButton>;
 };
 
-export default Button;
+export const TransparentButton = (props: any) => {
+  return (
+    <StyledTransparentButton {...props}>{props.value}</StyledTransparentButton>
+  );
+};

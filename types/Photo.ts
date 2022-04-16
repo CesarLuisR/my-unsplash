@@ -1,14 +1,12 @@
-export interface Image {
+export interface Photo {
   _id: string;
   label: string;
   url: string;
-  password: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
-export interface ImageObjectValue {
+export interface PhotoObjectValue {
   label: string;
   url: string;
-  password: string;
 }

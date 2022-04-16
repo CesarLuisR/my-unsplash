@@ -1,10 +1,14 @@
 import Header from "@components/Navigation/Header";
 import Head from "next/head";
 import { Wrapper, Main } from "./styled";
+import { Context } from "@contexts/Global/Context";
+import { useContext } from "react";
 
-const AppLayout = ({ children, title, opacity }: Props) => {
+const AppLayout = ({ children, title }: Props) => {
+  const { isModalOpen } = useContext(Context);
+
   return (
-    <Wrapper opacity={opacity}>
+    <Wrapper opacity={isModalOpen}>
       <Head>
         <title>{title}</title>
       </Head>
@@ -19,7 +23,6 @@ const AppLayout = ({ children, title, opacity }: Props) => {
 type Props = {
   children: React.ReactNode;
   title: string;
-  opacity?: boolean;
 };
 
 export default AppLayout;

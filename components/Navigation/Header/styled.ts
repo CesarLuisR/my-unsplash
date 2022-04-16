@@ -14,3 +14,8 @@ export const MainHeader = styled.div`
   align-items: center;
   width: 400px;
 `;
+
+export const MenuIcon = styled.div`
+  font-size: 35px;
+  cursor: pointer;
+`;

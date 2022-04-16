@@ -12,7 +12,19 @@ export const StyledButton = styled.button`
   font-family: "Noto Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
   color: #ffffff;
+`;
+
+export const StyledSmallButton = styled(StyledButton)`
+  width: 105px;
+  height: 55px;
+`;
+
+export const StyledTransparentButton = styled(StyledButton)`
+  background: transparent;
+  box-shadow: none;
+  color: #bdbdbd;
+  padding: 5px;
 `;

@@ -1,27 +1,22 @@
 import { useState } from "react";
 import { Context } from "./Context";
 
-const AppProvider = ({ children }: AppProviderProps) => {
-  const [search, setSearch] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const Provider = ({ children }: Props) => {
+  const [search, setSearch] = useState<string>("");
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  const handleSearch = (value: string) => setSearch(value);
-
-  const openModal = () => setIsModalOpen(true);
-
-  const closeModal = () => setIsModalOpen(false);
+  const handler = (value: string) => setSearch(value);
+  const modalHandler = (value: boolean) => setIsModalOpen(value);
 
   return (
-    <Context.Provider
-      value={{ search, handleSearch, isModalOpen, openModal, closeModal }}
-    >
+    <Context.Provider value={{ search, handler, isModalOpen, modalHandler }}>
       {children}
     </Context.Provider>
   );
 };
 
-type AppProviderProps = {
+type Props = {
   children: React.ReactNode;
 };
 
-export default AppProvider;
+export default Provider;

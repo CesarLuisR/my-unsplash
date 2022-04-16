@@ -4,7 +4,7 @@ const Text = styled.h2`
   font-family: "Noto Sans";
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 33px;
   color: #333333;
 `;

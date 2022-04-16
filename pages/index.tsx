@@ -1,12 +1,15 @@
 import type { NextPage } from "next";
 import AppLayout from "@components/Layout/AppLayout";
 import HomeModule from "@modules/Home";
+import Provider from "@contexts/Global/Provider";
 
 const Home: NextPage = () => {
   return (
-    <AppLayout title="Home">
-      <HomeModule />
-    </AppLayout>
+    <Provider>
+      <AppLayout title="Home">
+        <HomeModule />
+      </AppLayout>
+    </Provider>
   );
 };
 

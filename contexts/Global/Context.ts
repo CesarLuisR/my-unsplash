@@ -1,9 +1,8 @@
-import { createContext } from "react";
+import React from "react";
 
-export const Context = createContext({
+export const Context = React.createContext({
   search: "",
-  handleSearch: (value: string) => {},
   isModalOpen: false,
-  openModal: () => { },
-  closeModal: () => { },
+  handler: (value: string) => {},
+  modalHandler: (value: boolean) => {},
 });

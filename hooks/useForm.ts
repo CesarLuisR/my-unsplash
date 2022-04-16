@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const useForm = ({ initialValues, callback }: Props) => {
-  const [values, setValues] = useState(initialValues);
+  const [values, setValues] = useState<any>(initialValues);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;

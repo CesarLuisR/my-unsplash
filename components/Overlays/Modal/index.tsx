@@ -1,52 +1,44 @@
-import Portal from "../Portal";
-import { useContext } from "react";
-import { Context } from "@contexts/Global/Context";
-import { ButtonContainer, Wrapper } from "./styled";
 import Title from "@components/DataDisplay/Title";
-import Input from "@components/Form/Input";
-import Button from "@components/Form/Button";
+import { LabelInput } from "@components/Form/Input";
 import Spacing from "@components/Layout/Spacing";
+import Portal from "../Portal";
+import { Context } from "@contexts/Global/Context";
+import { useContext } from "react";
+import { ButtonContainer, ModalWrapper } from "./styled";
+import { SmallButton, TransparentButton } from "@components/Form/Button";
 import useModalForm from "./hooks/useModalForm";
 
 const Modal = () => {
-  const { closeModal } = useContext(Context);
-  const { handleChange, handleSubmit } = useModalForm();
+  const { modalHandler } = useContext(Context);
+  const { handleChange, handleSubmit, values } = useModalForm();
 
   return (
     <Portal>
-      <Wrapper
-        onSubmit={(e) => {
-          handleSubmit(e);
-          closeModal();
-        }}
-      >
+      <ModalWrapper onSubmit={handleSubmit}>
         <Title>Add a new photo</Title>
-        <Input
-          placeholder="Anything could be here"
+        <LabelInput
           label="Label"
+          placeholder="Anything could be here"
           name="label"
+          value={values.label}
           onChange={handleChange}
-          required
         />
         <Spacing size={1} />
-        <Input
-          placeholder="https://images.unsplash.com/photo-1584395630827-860eee694d7b?ixlib=r..."
+        <LabelInput
           label="Photo URL"
+          placeholder="Url..."
           name="url"
+          value={values.url}
           onChange={handleChange}
-          required
         />
-        <Spacing size={1} />
         <ButtonContainer>
-          <Button
-            content="Cancel"
-            color="transparent"
-            size="small"
-            onClick={closeModal}
+          <SmallButton value="Add" color="#3DB46D" />
+          <TransparentButton
+            value="Cancel"
+            onClick={() => modalHandler(false)}
           />
-          <Button content="Submit" color="#3DB46D" size="small" />
         </ButtonContainer>
-      </Wrapper>
+      </ModalWrapper>
     </Portal>
   );
 };

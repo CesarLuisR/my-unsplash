@@ -14,6 +14,6 @@ export const Main = styled.div`
   margin: 0 auto;
 
   @media (max-width: 768px) {
-    width: 95%;
+    width: 90%;
   }
 `;
