@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 type Props = {
-  opacity?: boolean;
+  opacity?: number;
 };
 
 export const Wrapper = styled.div<Props>`
   width: 100wv;
-  opacity: ${(props) => props.opacity && 0.5};
+  opacity: ${(props) => props.opacity};
 `;
 
 export const Main = styled.div`

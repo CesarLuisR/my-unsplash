@@ -21,6 +21,9 @@ const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handler(e.target.value)
             }
+            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
+              e.key === "Enter" && setIsOpen(false)
+            }
           />
           <Button
             value="Add a photo"

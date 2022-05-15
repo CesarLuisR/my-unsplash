@@ -1,12 +1,12 @@
 import Title from "@components/DataDisplay/Title";
-import { LabelInput } from "@components/Form/Input";
+import { LabelInput, SubmitInput } from "@components/Form/Input";
 import Spacing from "@components/Layout/Spacing";
 import Portal from "../Portal";
 import { Context } from "@contexts/Global/Context";
 import { useContext } from "react";
-import { ButtonContainer, ModalWrapper } from "./styled";
-import { SmallButton, TransparentButton } from "@components/Form/Button";
 import useModalForm from "./hooks/useModalForm";
+import { ButtonContainer, ModalWrapper } from "./styled";
+import { TransparentButton } from "@components/Form/Button";
 
 const Modal = () => {
   const { modalHandler } = useContext(Context);
@@ -32,11 +32,14 @@ const Modal = () => {
           onChange={handleChange}
         />
         <ButtonContainer>
-          <SmallButton value="Add" color="#3DB46D" />
           <TransparentButton
             value="Cancel"
-            onClick={() => modalHandler(false)}
+            onClick={(e: any) => {
+              e.preventDefault();
+              modalHandler(false);
+            }}
           />
+          <SubmitInput value="Add" color="#3DB46D" />
         </ButtonContainer>
       </ModalWrapper>
     </Portal>

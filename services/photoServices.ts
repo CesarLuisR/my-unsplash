@@ -1,21 +1,26 @@
-import { request } from "@utils/request";
 import { apiRoutes } from "@config/apiRoutes";
-import type { Photo, PhotoObjectValue } from "@globalTypes/Photo";
+import type { PhotoObjectValue } from "@globalTypes/Photo";
 
-// Get all images
-export const getPhotos = () =>
-  request<Photo[]>(apiRoutes.photo.getAll).then((data) => data);
+export const getPhotos = async () => {
+  const response = await fetch(apiRoutes.photo.getAll);
+  const data = await response.json();
+  return data;
+};
 
-// Add image to database
-export const addPhoto = (photo: PhotoObjectValue) =>
-  request<Photo>(apiRoutes.photo.add, {
+export const addPhoto = async (photo: PhotoObjectValue) => {
+  const response = await fetch(apiRoutes.photo.add, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(photo),
-  }).then((data) => data);
+  });
+  const data = await response.json();
+  return data;
+};
 
-// Delete image from database
-export const deletePhoto = (id: string) =>
-  request<void>(apiRoutes.photo.delete(id), {
+export const deletePhoto = async (id: string) => {
+  const response = await fetch(apiRoutes.photo.delete(id), {
     method: "DELETE",
-  }).then((data) => data);
+  });
+  const data = await response.json();
+  return data;
+};

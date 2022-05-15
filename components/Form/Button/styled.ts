@@ -28,3 +28,15 @@ export const StyledTransparentButton = styled(StyledButton)`
   color: #bdbdbd;
   padding: 5px;
 `;
+
+export const StyledRoundedButton = styled(StyledButton)`
+  background: transparent;
+  color: ${(props) => props.color};
+  border: ${(props) => `1px solid ${props.color}`};
+  border-radius: 38px;
+  width: 70px;
+  height: 30px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+`;

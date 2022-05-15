@@ -63,3 +63,20 @@ export const Label = styled.label`
     margin-top: 10px;
   }
 `;
+
+export const StyledSubmitInput = styled.input.attrs({ type: "submit" })`
+  width: 105px;
+  height: 55px;
+  background: ${(props) => props.color};
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
+`;

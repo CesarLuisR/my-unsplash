@@ -1,5 +1,6 @@
 import {
   StyledButton,
+  StyledRoundedButton,
   StyledSmallButton,
   StyledTransparentButton,
 } from "./styled";
@@ -16,4 +17,8 @@ export const TransparentButton = (props: any) => {
   return (
     <StyledTransparentButton {...props}>{props.value}</StyledTransparentButton>
   );
+};
+
+export const RoundedButton = (props: any) => {
+  return <StyledRoundedButton {...props}>{props.value}</StyledRoundedButton>;
 };
