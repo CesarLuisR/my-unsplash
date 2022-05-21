@@ -1,9 +1,11 @@
-const baseApi = process.env.API || "http://localhost:5000/api/photos";
+const API = process.env.API || "http://localhost:5000/api/photos";
+
+console.log(API);
 
 export const apiRoutes = {
   photo: {
-    getAll: `${baseApi}/get-photos`,
-    add: `${baseApi}/add-photo`,
-    delete: (id: string) => `${baseApi}/delete-photo/${id}`,
+    getAll: `${API}/get-photos`,
+    add: `${API}/add-photo`,
+    delete: (id: string) => `${API}/delete-photo/${id}`,
   },
 };
