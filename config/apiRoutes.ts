@@ -1,6 +1,4 @@
-const API = process.env.API || "http://localhost:5000/api/photos";
-
-console.log(API);
+const API = "https://my-unsplash-cesarluisrc.herokuapp.com/api/photos";
 
 export const apiRoutes = {
   photo: {
